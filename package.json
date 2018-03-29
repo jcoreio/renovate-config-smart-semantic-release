@@ -26,7 +26,7 @@
       },
       "optionalDependencies": {
         "major": {
-          "extends": [":semanticCommitType(fix)", ":semanticBreakingChangeMessage"]
+          "extends": [":semanticCommitType(fix)", "smart-semantic-release:semanticBreakingChangeMessage"]
         },
         "minor": {
           "extends": ":semanticCommitType(chore)"
@@ -37,7 +37,7 @@
       },
       "peerDependencies": {
         "major": {
-          "extends": [":semanticCommitType(fix)", ":semanticBreakingChangeMessage"]
+          "extends": [":semanticCommitType(fix)", "smart-semantic-release:semanticBreakingChangeMessage"]
         },
         "minor": {
           "extends": ":semanticCommitType(chore)"
