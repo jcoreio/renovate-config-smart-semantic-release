@@ -1,0 +1,51 @@
+{
+  "name": "renovate-config-smart-semantic-commits",
+  "version": "1.0.0",
+  "description": "smarter renovate preset for semantic-release",
+  "author": "Andy Edwards",
+  "license": "ISC",
+  "renovate-config": {
+    "semanticBreakingChangeMessage": {
+      "commitMessage": "Update dependency {{{depName}}} to {{#unless isRange}}v{{/unless}}{{{newVersion}}}\n\nBREAKING CHANGE: this package may no longer work in projects requiring an older major version of {{{depName}}}"
+    },
+    "default": {
+      "description": "",
+      "dependencies": {
+        "major": {
+          "extends": ":semanticCommitType(fix)"
+        },
+        "minor": {
+          "extends": ":semanticCommitType(chore)"
+        },
+        "patch": {
+          "extends": ":semanticCommitType(chore)"
+        }
+      },
+      "devDependencies": {
+        "extends": ":semanticCommitType(chore)"
+      },
+      "optionalDependencies": {
+        "major": {
+          "extends": [":semanticCommitType(fix)", ":semanticBreakingChangeMessage"]
+        },
+        "minor": {
+          "extends": ":semanticCommitType(chore)"
+        },
+        "patch": {
+          "extends": ":semanticCommitType(chore)"
+        }
+      },
+      "peerDependencies": {
+        "major": {
+          "extends": [":semanticCommitType(fix)", ":semanticBreakingChangeMessage"]
+        },
+        "minor": {
+          "extends": ":semanticCommitType(chore)"
+        },
+        "patch": {
+          "extends": ":semanticCommitType(chore)"
+        }
+      }
+    }
+  }
+}
